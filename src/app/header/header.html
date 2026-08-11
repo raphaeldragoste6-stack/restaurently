@@ -1,0 +1,43 @@
+<header>
+  <p class="logo">Restaurantly</p>
+
+  <!-- Bouton Burger avec événement au clic -->
+  <button class="mobile-nav-toggle" (click)="toggleMenu()" aria-label="Toggle navigation">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+
+<!-- Fond sombre (Overlay) : ferme le menu si on clique dessus -->
+  <div class="menu-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
+
+
+
+  <nav class="nav-menu" [class.active]="isMenuOpen">
+    <ul> 
+      <li><a href="#hero" (click)="closeMenu()">Home</a></li>
+      <li><a href="#about" (click)="closeMenu()">About</a></li>
+      <li><a href="#menu" (click)="closeMenu()">Menu</a></li>
+      <li><a href="#specials" (click)="closeMenu()">Specials</a></li>
+      <li><a href="#chefs" (click)="closeMenu()">Chefs</a></li>
+      <li><a href="#gallery" (click)="closeMenu()">Gallery</a></li>
+      <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+
+      <!-- Bouton intégré dans le menu sur mobile -->
+      <li class="mobile-btn-item"> 
+        <a href="#book" class="btn-book">Book a table</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Bouton visible uniquement sur PC -->
+  <a href="#" class="btn-book desktop-btn">Book a table</a>
+
+  
+</header>
+  <div class="soko">
+    <p>   <span class="info-icon"><i class="fas fa-phone-alt"></i></span> +1 5974 6282 26 </p>
+    <p>   <span class="info-icon"><i class="fas fa-envelope"></i></span>  info@restaurant.com</p>
+
+  </div>

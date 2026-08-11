@@ -1,0 +1,1424 @@
+
+     /* ============================================================
+   1. STYLES DE BASE (MOBILE FIRST)
+   Ces règles s'appliquent PAR DÉFAUT à tous les écrans (Mobile).
+   ============================================================ */
+   
+   
+   *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+     }
+     
+     
+     .hero{
+  
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/tailwindresponsive/img/hero-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+div{
+  padding: 15%;
+  margin-top: 50px;
+  
+  
+}
+
+
+h1 {
+ 
+ color: rgb(214, 4, 4);
+ 
+ 
+ 
+}
+main{
+  margin-right: 29px;
+  
+}
+
+.glos{
+ margin-top: 170px;
+  margin-left: 20px;
+  
+  
+}
+
+
+p{
+  color: white;
+  font-size: 0.7rem;
+  
+
+}
+
+.play{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+
+
+.tal{
+  color: rgba(255, 153, 0, 0.609);
+
+}
+
+
+
+
+button{
+  padding: 10px 9px;
+    border: 2px solid rgb(255, 153, 0);
+   background: transparent;
+    border-radius: 30px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.226);
+    color: white;
+    cursor: pointer;
+    margin-right: 0px;
+  margin-left: 22px;
+    font-weight: bold;
+    margin-top: 35px;
+    
+
+    
+}
+
+/*   a  cause du scrol je transf button en lien */
+
+.btn-hero {
+    display: inline-block;
+    text-decoration: none;
+    /* le reste de votre style bouton actuel (border, border-radius, padding, color...) */
+      padding: 10px 9px;
+    border: 2px solid rgb(255, 153, 0);
+   background: transparent;
+    border-radius: 30px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.226);
+    color: white;
+    cursor: pointer;
+    
+ 
+    font-weight: bold;
+    margin-top: 35px;
+    margin-right: 0px;
+    margin: 0  0px  0px 22px;
+    
+
+}
+
+
+.btn-container {
+ 
+
+  margin-top: 20px; /* Espace au-dessus des boutons */
+ margin-left: 15px;
+  padding: 0px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+/* effet video*/
+
+/* --- Styles généraux --- */
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Assure-toi que le container a un fond ou une image pour voir le bouton */
+
+  padding: 50px;
+  border-radius: 10px;
+}
+
+/* --- Le Bouton de Lecture (Le cercle jaune et l'animation) --- */
+
+.play-btn {
+  /* Dimensions du cercle */
+  width: 94px;
+  height: 94px;
+  
+  /* Arrière-plan jaune dégradé pour l'effet de profondeur */
+  background: radial-gradient(#cda45e 50%, rgba(205, 164, 94, 0.4) 52%);
+  
+  /* Bordures rondes parfaites */
+  border-radius: 50%;
+  
+  /* Pour centrer l'icône de triangle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Pour gérer les pseudos-éléments (l'animation) */
+  position: relative;
+  
+  /* Suppression du soulignement par défaut des liens */
+  text-decoration: none;
+  
+  /* Pour que les bords soient nets */
+  overflow: hidden;
+  
+  /* Petite ombre pour la profondeur */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  
+  /* Transition fluide au survol */
+  transition: all 0.3s ease-in-out;
+}
+
+.play-btn:hover {
+  /* Effet léger au survol */
+  transform: scale(1.05);
+  background: radial-gradient(#d3ae72 50%, rgba(211, 174, 114, 0.5) 52%);
+}
+
+/* --- L'éclat/halo animé (Le secret de l'effet) --- */
+
+.play-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  
+  /* Couleur de l'éclat (jaune semi-transparent) */
+  background-color: rgba(205, 164, 94, 0.5);
+  
+  /* Pour que l'éclat soit *derrière* l'icône mais dans le bouton */
+  z-index: 1;
+  
+  /* L'animation elle-même */
+  animation: pulse-border 1.5s linear infinite;
+  
+  /* Initialement invisible */
+  opacity: 0;
+}
+
+/* --- L'icône du triangle (CSS pur) --- */
+
+.play-icon {
+  /* Pour qu'elle soit *devant* l'éclat */
+  z-index: 2;
+  
+  /* Dimensions invisibles mais on utilise les bordures pour créer la forme */
+  width: 0;
+  height: 0;
+  
+  /* Taille du triangle */
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 25px solid #fff; /* La couleur blanche du triangle */
+  
+  /* Petit décalage pour que le triangle semble parfaitement centré visuellement */
+  margin-left: 5px;
+}
+
+/* --- Définition de l'animation de pulsation --- */
+
+@keyframes pulse-border {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    /* L'éclat grandit et s'estompe */
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/* 2e section  */
+
+  .sapo{
+
+      height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-image:     linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.541)),
+     url('/tailwindresponsive/img/about-bg.jpg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+
+
+.loko{
+    
+  max-width: 98%;
+  border: 7px solid #808080;
+  margin-top: 55px;
+  margin-left: 15px;
+
+ 
+  
+}
+
+h1{
+  color: white;
+  font-size: 1.6rem;
+
+
+}
+.mal{
+   color: rgba(250, 235, 215, 0.356);
+  font-style: italic;
+}
+
+.pol{
+  display: block;
+}
+.coche{
+  color: white;
+
+  font-size: 0.8rem;
+  list-style: none;
+
+
+
+}
+
+.coche li{
+    position: relative;
+  padding-left: 25px; /* Laisse de la place pour le crochet */
+  margin-bottom: 10px;
+
+}
+
+.coche li:before{
+  content: "✓✓";
+    position: absolute;
+  left: 0;
+  top: 0;
+  color: #cda45e;           /* Couleur dorée/jaune */
+  font-weight: bold; 
+}
+
+.tol{
+  font-weight: bold; 
+}
+
+
+
+.troi{
+  background-color: rgb(0, 0, 0);  
+ 
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.cho{
+  padding: 5%;
+  margin: 0;
+ 
+
+  
+}
+
+
+
+.pato{
+
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaaaaa; /* Couleur du texte (gris/blanc) */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  
+  /* Flexbox pour aligner le tiret et le texte sur la même ligne */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espace entre le tiret et 'WHY US' */
+}
+
+/* Le tiret doré placé AVANT le texte */
+.pato::after {
+  content: "";
+  width: 120px;       /* Longueur de la ligne */
+  height: 2px;        /* Épaisseur de la ligne */
+  background: #cda45e; /* Couleur dorée */
+  display: inline-block;
+
+
+
+}
+
+.pala{
+   color: #cda45e;
+ font-size: 1.7rem;
+}
+
+
+
+.polo{
+ display: block;
+
+}
+
+
+.zolo{
+  background-color:rgba(30, 26, 26, 0.874);
+  height: 25vh;
+  margin-left: 32px;
+  
+   padding: 15px;
+
+margin-top: 9px;
+   
+
+   
+
+ 
+
+}
+.jo{
+  color: #cda45e;
+  padding-bottom: 28px;
+ 
+}
+
+.kaka{
+  font-size: 1.6rem;
+  font-weight: bold;
+
+  
+  
+}
+
+
+
+
+
+.kol{
+  background-color:rgba(30, 26, 26, 0.969); 
+ 
+  height: 130vh;
+  width: 100%;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.palu{
+  margin-top: 15px;
+    color: #cda45e;
+ font-size: 1.7rem;
+}
+
+.loli{
+  margin-top: 79px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.6rem;
+  list-style: none;
+
+  
+  
+ 
+
+
+}
+.sil{
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  
+}
+
+/*survol */
+.sil :hover{
+  color: #cda45e;
+}
+.sil-active{
+  color:  #cda45e;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/* Sur grand écran, 2 colonnes côte à côte */
+@media (min-width: 768px) {
+    .menu-item {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 60px;
+    }
+}
+
+/* Chaque plat : photo ronde + texte à côté */
+.menu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+   padding: 0;
+   margin: 0;
+   margin-top: 15px;
+}
+
+/* Photo ronde du plat */
+.menu-item-img {
+  
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;    /* Recadre l'image proprement dans le cercle */
+    border: 2px solid rgb(83, 83, 82);
+    flex-shrink: 0;        /* Empêche l'image de rétrécir si le texte est long */
+}
+
+.menu-item-content {
+    flex: 1;
+}
+
+/* Ligne contenant le nom du plat + le prix, avec des pointillés entre les deux */
+.menu-item-header {
+    display:block;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    padding:0;
+    margin: 0;
+}
+
+.menu-item-header h4 {
+    color: white;
+    font-size: 12px;
+    white-space: nowrap;   /* Empêche le nom du plat de se couper sur 2 lignes */
+}
+
+.menu-item-header p{
+  font-size: 10px;
+}
+
+
+
+.menu-item-price {
+    color: rgb(255, 166, 0);
+    font-weight: bold;
+    white-space: nowrap;
+    background-color: #040404;
+}
+
+.menu-item-content p {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+/*  */
+
+
+
+.mool{
+  background-color:black; 
+ 
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+.kilos{
+margin: 0;
+margin-top: 0px;
+
+
+}
+
+.kilos p{
+
+font-size: 1.3rem;
+font-weight: bold;
+margin-bottom: 45px; /* Espace entre les lignes */
+
+}
+
+
+
+
+.boulou{
+height:50px ;
+width: 100%;
+  background-color: #cda45e;
+  margin-left: 15px;
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fokou{
+   background-color:black;  
+ 
+  height: 90vh;
+  width: 100%;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+/* Image du bas */
+.imagi img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%; /* Si tu veux que l'image soit circulaire */
+  object-fit: cover;
+  margin-left: 19px;
+  
+}
+
+.imagi{
+  margin: 0;
+}
+
+.luku{
+  font-size: 1.4rem;
+  margin-left: 9px;
+}
+
+.go{
+  margin-top: 8px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.quia{
+  display: block;
+}
+
+
+
+
+
+
+.kube{
+background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url('/tailwindresponsive/img/events-bg.jpg');
+   
+ 
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+
+    
+    
+  
+
+}
+
+
+.events-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  
+}
+
+
+
+.events-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* /tailwindresponsive/img/events-bg.jpg Bloc de contenu bas (avec image de fond foncée) */
+
+
+/* Titre */
+.events-title {
+  font-family: 'Times New Roman', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  padding-top: 90px;
+     
+}
+
+/* On s'assure que le bloc est bien aligné à gauche */
+.events-price {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+/* Le montant du prix */
+.price-amount {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 8px; /* Espace entre le texte $189 et la ligne */
+  margin-top: 15px;
+}
+
+/* LA LIGNE FINE JAUNE (Créée automatiquement en CSS sous le prix) */
+.price-amount::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;          /* Largeur de la ligne */
+  height: 2px;         /* Épaisseur exacte de 2px */
+  background-color: #c9a063; /* Couleur dorée/jaune */
+}
+
+/* Description en italique */
+.events-description {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #dddddd;
+  margin-bottom: 20px;
+}
+
+/* Liste à puces */
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.events-list li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Icône de coche dorée (✓) */
+.check-icon {
+ display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 20px;
+  height: 20px;
+  min-width: 20px; /* Évite que le cercle ne s'écrase si le texte est long */
+  
+  border: 1.5px solid #c9a063; /* Bordure dorée du cercle */
+  border-radius: 50%;          /* Rend le carré parfaitement rond */
+  
+  color: #c9a063;              /* Couleur de la coche */
+  font-size: 11px;             /* Taille de la coche à l'intérieur */
+  margin-right: 12px;
+  margin-top: 2px;
+}
+
+
+/* Conteneur des points : centré au milieu de la section */
+.carousel-dots {
+  display: flex;
+  justify-content: center; /* Centre horizontalement les points */
+  align-items: center;
+  gap: 12px;               /* Espace entre chaque point */
+  margin-top: 30px;        /* Marge au-dessus des points */
+  margin-bottom: 20px;
+ 
+}
+
+/* Style de base pour chaque point */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;                 /* Transforme le carré en rond parfait */
+  background-color: rgba(255, 255, 255, 0.3); /* Gris semi-transparent pour les inactifs */
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style du point actif (le premier, en couleur jaune/dorée) */
+.dot.active {
+  background-color: #c9a063; /* Couleur dorée exacte du thème */
+}
+
+
+
+
+
+
+
+/*.sokou{
+
+background-color: rgb(252, 7, 7);
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+*/
+
+/* ==========================================
+   2. ADAPTATION DESKTOP (Grands écrans)
+   =========================================
+
+@media screen and (min-width: 992px) {
+  .events-container {
+    flex-direction: row; 
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .events-image-wrapper,
+  .events-content {
+    width: 50%; 
+  }
+
+  .events-content {
+    padding: 40px;
+  }
+
+  .events-title {
+    font-size: 34px;
+  }
+}
+
+*/
+
+
+
+
+.poloi{
+  background-color: black;
+  height: 105vh;
+  width: 100%;
+}
+
+.chou{
+   padding: 5%;
+  margin: 0;
+
+}
+
+.pati{
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaaaaa; /* Couleur du texte (gris/blanc) */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  
+  /* Flexbox pour aligner le tiret et le texte sur la même ligne */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espace entre le tiret et 'WHY US' */
+
+}
+
+
+/* Le tiret doré placé AVANT le texte */
+.pati::after {
+  content: "";
+  width: 120px;       /* Longueur de la ligne */
+  height: 2px;        /* Épaisseur de la ligne */
+  background: #cda45e; /* Couleur dorée */
+  display: inline-block;
+
+
+
+}
+
+
+
+.pall{
+ margin-top: 15px;
+    color: #cda45e;
+ font-size: 1.7rem;
+  
+}
+
+
+
+.boo{
+  
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;           /* longggg xxxx */
+  
+    max-width: 560px;  /* maxxxx     xxxx   */
+    margin-left: 15px;
+   
+}
+
+.sol{
+  
+  width: 40%;
+  margin-left: 31% !important;
+  margin: 0 ;
+}
+
+.sok {
+  
+  padding: 10px 15px;
+  background: transparent;
+  color: white;
+font-size: 16px;
+border: 2px solid #1d1d19;
+   
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+  
+    
+    
+    outline: none;
+    font-family: inherit;  /* important pour style */
+   
+}
+
+ textarea{
+  background: transparent;
+  color: white;
+  border: 2px solid #1d1d19;
+  
+}
+
+
+.xo{
+  
+  background-color: rgba(0, 0, 0, 0.916);
+  height:135vh ;
+  width: 100%;
+}
+
+.ju{
+  margin: 0;
+  padding: 10%;
+  
+}
+
+.ji{
+
+   font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaaaaa; /* Couleur du texte (gris/blanc) */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  
+  /* Flexbox pour aligner le tiret et le texte sur la même ligne */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espace entre le tiret et 'WHY US' */
+
+}
+
+.ji::after{
+
+   content: "";
+  width: 120px;       /* Longueur de la ligne */
+  height: 2px;        /* Épaisseur de la ligne */
+  background: #cda45e; /* Couleur dorée */
+  display: inline-block;
+
+
+}
+
+.li{
+   margin-top: 15px;
+    color: #cda45e;
+ font-size: 1.7rem;
+}
+  
+
+
+
+
+.cadre {
+   background-color: #1d1d19d3;
+  height: 72vh;
+  margin-left: 18px;
+  
+    
+}
+
+.testimonial-text {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.icon {
+    font-size: 60px;
+    color: rgb(255, 166, 0);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+
+.start {
+   display: block;
+    text-align: left;
+}
+
+.end {
+    display: block;
+    text-align: right;
+}
+    
+
+
+.test {
+  padding: 0px;
+    margin: 0px;
+}
+
+.author-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+
+
+.author-name {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.author-role {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-style: italic;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    
+    margin: 0 ;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 166, 0);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: rgb(255, 166, 0);
+}
+
+
+
+
+
+
+
+
+.xok{
+  
+background-color: #040404;
+  height:275vh ;
+  width: 100%;
+}
+
+
+
+.imge{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  
+}
+.imge img{
+  height: 30vh;
+  width: 100%;
+ 
+ 
+}
+
+
+/*  new back */
+
+.sim{
+  
+background-color: #040404;
+  height:120vh ;
+  width: 100%;
+}
+
+
+/*  new back */
+
+
+.nuk{
+  
+background-color: #171515f0;
+  height:130vh ;
+  width: 100%;
+}
+
+.local{
+  background-image: url(/tailwindresponsive/img/gallery/local.webp);
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+  height: 50vh;
+  width: 400px !important;
+ 
+}
+
+
+
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 0;
+    padding: 15px;
+}
+
+.info-text{
+   padding: 0;
+   margin: 0;
+}
+
+/* Icône dans son carré orange */
+.info-icon {
+    background-color: rgb(255, 166, 0);
+    color: black;
+    width: 45px;
+    height: 45px;
+    min-width: 45px;         /* Empêche l'icône de rétrécir si le texte est long */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.info-item h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+
+.sokk{
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.424);
+  color: rgba(239, 156, 3, 0.736);
+font-size: 16px;
+border: 2px solid #bd890358;
+   
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+  
+    
+    
+    outline: none;
+    font-family: inherit;  /* important pour style */
+}
+
+
+
+
+
+/*  new lignee */
+
+/* ===== Conteneur global du footer ===== */
+.footer {
+    background-color: #0d0d0d;   /* Fond noir, cohérent avec le reste du site */
+    color: rgba(255, 255, 255, 0.7);  /* Texte gris clair par défaut (pas blanc pur, plus doux) */
+    padding: 50px 25px 20px;      /* Espace intérieur : plus en haut, moins en bas (avant le copyright) */
+    display: flex;
+    flex-direction: column;       /* Empile les blocs verticalement (version mobile) */
+    gap: 40px;                    /* Espace entre chaque grande section (about, links, services...) */
+}
+
+
+.poi {
+margin: 0;
+padding: 0;
+}
+
+
+.footer-social{
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+ 
+  
+
+  
+
+}
+
+.footer-social a{
+  color: rgba(255, 255, 255, 0.449);
+border: 1px solid rgb(235, 235, 231);
+padding: 5px 5px;
+border-radius: 50%;
+
+height: 30px;
+width: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+ transition: 0.3s ease;
+  
+  
+}
+
+.footer-social a:hover {
+    background-color: rgb(255, 166, 0);  /* Se remplit en orange au survol */
+    border-color: rgb(255, 166, 0);
+    color: black;
+}
+
+.facebook{
+   border: 2px solid rgb(235, 235, 231);
+  border-radius: 50%;
+  padding: 1px 6px;
+  background-color: #eae5e55c;
+  color: #040404af !important;
+  font-size: 14px;
+
+}
+
+.linkedin{
+   
+   padding: 1px 4px ;
+   font-size: 12px;
+   background-color: #eae5e592;
+    color: #040404af !important;
+}
+
+
+
+
+
+
+
+
+
+/* ===== Titres de section (Useful Links, Our Services, Our Newsletter) ===== */
+.footer-links,
+.footer-services,
+.footer-newsletter{
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links h3,
+.footer-services h3,
+.footer-newsletter h3 {
+    color: white;
+    font-size: 20px;
+   
+    position: relative;
+    padding-bottom: 10px;
+   
+}
+
+/* Petite ligne orange sous chaque titre de section */
+
+
+
+/* ===== Listes de liens (Useful Links / Our Services) ===== */
+.footer-links ul,
+.footer-services ul {
+    list-style: none;   /* Supprime les puces par défaut des <li> */
+}
+
+.footer-links li,
+.footer-services li {
+    margin-bottom: 12px;   /* Espace vertical entre chaque lien */
+}
+
+.footer-links a,
+.footer-services a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-services a:hover {
+    color: rgb(255, 166, 0);   /* Le lien devient orange au survol */
+    padding-left: 5px;          /* Léger décalage vers la droite, effet dynamique au survol */
+}
+
+/* ===== Bloc Newsletter ===== */
+.footer-newsletter p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+.newsletter-form {
+    display: flex;    /* Champ email et bouton côte à côte */
+}
+
+.newsletter-form input {
+    flex: 1;                 /* Le champ prend tout l'espace disponible */
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    background: rgba(31, 29, 29, 0.822);
+    font-size: 14px;
+    height: 5vh;
+    width: 100%;
+    margin-top: 38px;
+    color: white;
+}
+
+.newsletter-form button {
+    padding: 12px 20px;
+    background-color: rgba(255, 174, 0, 0.435);
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;    /* Empêche le texte "Subscribe" de passer à la ligne */
+}
+
+.newsletter-form button:hover {
+    background-color: rgb(230, 150, 0);   /* Orange légèrement plus foncé au survol */
+}
+
+/* ===== Bas de page (copyright) ===== */
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Ligne fine séparant le contenu du copyright */
+    font-size: 13px;
+}
+
+.footer-bottom p {
+    margin-bottom: 5px;
+}
+
+.footer-bottom a {
+    color: rgb(255, 166, 0);
+    text-decoration: none;
+}
+
+/* ===== Bouton "Retour en haut" (flèche flottante) ===== */
+.back-to-top {
+    position: fixed;        /* Reste visible même en scrollant */
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(255, 166, 0);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+
+
+
+
+ 
+

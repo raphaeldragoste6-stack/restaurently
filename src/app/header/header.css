@@ -1,0 +1,265 @@
+
+
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+
+
+}
+
+
+header{
+   
+    display: flex;
+    justify-content: space-between;
+   
+    background-color: rgba(19, 18, 18, 0.834);
+    padding: 15px;
+    align-items: center;
+
+   
+width: 100%;
+
+
+   
+    
+}
+
+
+
+
+
+
+
+
+
+ul{
+    
+    display: flex;
+ gap: 0.3rem;
+
+
+ font-weight: bold;
+ align-items: center;
+ justify-content: center;
+
+ margin-left: 50px;
+ 
+ 
+}
+
+
+
+li{
+    list-style: none;
+    color: white;
+    
+}
+
+a{
+    text-decoration: none;
+     color: white;
+     font-size: 0.5rem;
+     
+    
+}
+
+.logo{
+    color: white;
+   font-size: 1.6rem;
+   font-style:italic;
+   margin-right: 5px;
+   
+   /* aligner tout  sous le logo  ettt*/
+
+   
+}
+
+
+
+
+
+
+
+button{
+    
+      border: 1px solid rgb(255, 153, 0);
+  
+    border-radius: 30px;
+    
+    background-color: rgba(0, 0, 0, 0.226);
+    color: white;
+    cursor: pointer;
+    
+   margin: 0;
+
+
+    white-space: nowrap;   /* s"assure que l'ecriture du bouton ne saute pas la ligne */
+   padding: 1px 2px;
+   
+    margin-left: 8px;
+
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+   
+}
+
+
+
+button:hover{
+    background-color: rgba(255, 94, 0, 0.568);
+}
+
+
+.pol a{
+    color: rgba(255, 153, 0, 0.39);
+}
+
+
+/*  aligner tout*/
+
+
+
+
+
+
+
+
+/* bbbb */
+
+/* --- STYLES GENERAUX (PC) --- */
+.mobile-nav-toggle,
+.mobile-btn-item {
+  display: none; /* Cachés sur PC */
+}
+
+.nav-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.soko{
+  
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(229, 106, 5, 0.171);
+    padding: 15px;
+    align-items: center;
+}
+
+/* --- RESPONSIVE MOBILE (< 768px) --- */
+@media (max-width: 768px) {
+  /* Cache le bouton "Book a table" classique du header sur mobile */
+  .desktop-btn {
+    display: none;
+  }
+
+  /* Affiche l'élément bouton dans la liste déroulante mobile */
+  .mobile-btn-item {
+    display: block;
+    margin-top: 15px;
+  }
+
+  /* Affiche le bouton burger */
+  .mobile-nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  .mobile-nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+
+  /* Le Menu en mode déroulant cachè par défaut */
+  .nav-menu {
+    position: fixed;
+    top: 60px; /* S'affiche juste en dessous du header */
+    left: 0;
+    right: 0;
+    background-color: rgba(184, 76, 4, 0.89); /* Fond sombre semi-transparent */
+    padding: 20px;
+    border-radius: 19px;
+    
+    
+    /* Animation de disparition/apparition */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-menu ul {
+    flex-direction: column; /* Alignement vertical pour mobile */
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* CLASSE ACTIVE (appliquée au clic en Angular) */
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Glisse doucement vers le bas */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- OVERLAY (FOND SOMBRE DE HORS-MENU) --- */
+.menu-overlay {
+  display: none; /* Inactif sur grand écran */
+}
+
+@media (max-width: 768px) {
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Assombrit la page derrière */
+    z-index: 98; /* Place l'overlay juste en dessous du menu */
+    
+    /* Cache par défaut */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Quand le menu est ouvert */
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto; /* Permet d'intercepter le clic */
+  }
+
+  /* Assure-toi que ton menu a un z-index plus élevé que l'overlay */
+  .nav-menu {
+    z-index: 99;
+  }
+}

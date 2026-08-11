@@ -1,0 +1,462 @@
+<section id="hero" class="hero">
+  <app-header></app-header>
+
+  <main class="glos">
+    <h1>Welcome to <span class="tal"> Restaurently</span></h1>
+
+    <p>Delivering great food for more than 18 years!</p>
+
+    <div class="btn-container">
+      <a href="#menu" class="btn-hero">Our Menu</a>
+      <a href="#book" class="btn-hero">Book a Table</a>
+    </div>
+
+    <div class="video-container">
+      <!-- C'est ce lien qui va créer le cercle et l'animation -->
+      <a href="#" class="play-btn">
+        <!-- C'est l'icône de triangle à l'intérieur -->
+        <i class="play-icon"></i>
+      </a>
+    </div>
+  </main>
+</section>
+
+<section class="sapo">
+  <main>
+    <img class="loko" src="tailwindresponsive/img/about.jpg" alt="About us" />
+
+    <h1>Voluptatem dignissimos <span class="pol">provident</span></h1>
+
+    <p class="mal">
+      Lorem ipsum dolor typo etry vrettytempor deffy quster vyun teo elit lappze erty vokolo joval
+      naserty biemos gracias tol yasserty et dolore
+      <span class="pol">magna aliqua.</span>
+    </p>
+
+    <ul class="coche">
+      <li>Ullamco laboris nisi ut aliquip ex ea commando consequat.</li>
+      <li>Duis aute irure dolor in reprehenderit in velit.</li>
+      <li>
+        Ullamco laboris nisi ut aliquip ex ea commando irure dolor in reprehenderit in verto
+        kolokozar fugiat nulla pariatur.
+      </li>
+    </ul>
+
+    <p class="tol">
+      Ullamco laboris nisi ut aliquip ex ea commando Duis aute irure dolor in reprehenderit in velit
+      bouil consequat xrowater belso kaza quiz dolé Ullamco laboris nisi ut aliquip ex ea commando
+      irurezer. gerser dolor in reprehenderit in verto kolokozar fugiat nulla pariatur.
+    </p>
+  </main>
+</section>
+
+<section class="troi">
+  <main>
+    <div class="cho">
+      <h1 class="pato">WHY US</h1>
+
+      <p class="pala">Why choose <span class="polo">Our Restaurant</span></p>
+    </div>
+
+    <div class="zolo">
+      <h1 class="jo">01</h1>
+
+      <p class="kaka">Lorem Ipsum</p>
+      <p class="koko">
+        Ulamco laboris nisi ut aliquip ex ea commondo consequat . Et consecteur ducimus vero plceat
+      </p>
+    </div>
+
+    <div class="zolo">
+      <h1 class="jo">02</h1>
+
+      <p class="kaka">Repellat Nihil</p>
+      <p class="koko">
+        Dolorem est fugiat occaecati voluptate velit esse.Dicta veritatis dolor quod et vel dire
+        leno para dest
+      </p>
+    </div>
+
+    <div class="zolo">
+      <h1 class="jo">03</h1>
+
+      <p class="kaka">Ad ad velit qui</p>
+      <p class="koko">
+        Molestiae officiis omnis illo asperiores.Aut doloribus vitae sunt debits quo vel nam quis
+      </p>
+    </div>
+  </main>
+</section>
+
+<section class="kol">
+  <main>
+    <div class="cho">
+      <h1 class="pato">Menu</h1>
+
+      <p class="palu">Check Our Tasty Menu</p>
+
+      <ul class="loli">
+        <li>
+          <a
+            href="#"
+            (click)="filterMenu('all', $event)"
+            [class]="selectedCategory === 'all' ? 'sil-active' : 'sil'"
+            >All</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            (click)="filterMenu('starters', $event)"
+            [class]="selectedCategory === 'starters' ? 'sil-active' : 'sil'"
+            >Starters</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            (click)="filterMenu('salads', $event)"
+            [class]="selectedCategory === 'salads' ? 'sil-active' : 'sil'"
+            >Salads</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            (click)="filterMenu('specialty', $event)"
+            [class]="selectedCategory === 'specialty' ? 'sil-active' : 'sil'"
+            >Speciality</a
+          >
+        </li>
+      </ul>
+
+      <!--
+       <ul class="loli">
+        <li><a href="" class="sil-active">All</a></li>
+        <li><a href="" class="sil">Starters</a></li>
+        <li><a href="" class="sil">Salads</a></li>
+        <li><a href="" class="sil">Speciality</a></li>
+      </ul>
+      -->
+    </div>
+
+    <div id="menu" class="menu-item" *ngFor="let item of filteredItems">
+      <img [src]="item.img" [alt]="item.name" class="menu-item-img" />
+
+      <div class="menu-item-header">
+        <h4>
+          {{ item.name }} ...................................
+          <span class="menu-item-price">{{ item.price }}</span>
+        </h4>
+
+        <p>{{ item.desc }}</p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<section class="mool">
+  <main>
+    <div class="cho">
+      <h1 class="pato">specials</h1>
+
+      <p class="palu">Check Our Specials</p>
+    </div>
+
+    <div class="kilos">
+      <p>Modi sit est</p>
+
+      <p>Unde praesentium sed</p>
+
+      <p id="specials">Pariatur explicabo vel</p>
+
+      <p>Nostrum qui quasi</p>
+    </div>
+
+    <div class="boulou"></div>
+  </main>
+</section>
+
+<section class="fokou">
+  <main>
+    <div class="imagi">
+      <img src="/tailwindresponsive/img/specials-5.png" alt="" />
+    </div>
+
+    <h1 class="luku">Est eveniet ipsam sindera pad rone matrelat sando reda</h1>
+
+    <p class="go">
+      Omnis blanditiis saepe eos autem qui sunt debitis promo <span class="quia">quia.</span>
+    </p>
+
+    <p class="go">
+      Exercitationem nostrum omnis.Ut reiciendis repudiandae minus.omnis recusandae ut non quam ut
+      quod eius qui.Ipsum quia odit vero atque qui quibustdan amet.occaecati sed est sint ut vitae
+      molestiae voluptate vel.
+    </p>
+  </main>
+</section>
+
+<section class="kube">
+  <!--jai ajouter dans le main touchstar pour activer le survole de gauche et a droite -->
+  <main class=""  (touchstart)="onTouchStart($event)" 
+      (touchend)="onTouchEnd($event)"   >
+
+    
+    <!-- Image du haut -->
+
+    <!-- Contenu texte avec l'image de fond sombrie -->
+
+    <div   class="events-price" *ngFor="let slide of slides; let i = index" [hidden]="i !== currentSlide">
+     <!-- <img [src]="slide.img" [alt]="" class="events-price-img" /> --> 
+
+      <h2 class="events-title">{{ slide.title }}</h2>
+      <span class="price-amount">{{ slide.price }}</span>
+    </div>
+
+    <p class="events-description" *ngFor="let slide of slides; let i = index" [hidden]="i !== currentSlide">
+      {{ slide.desc }}
+    </p>
+
+    <ul
+      class="events-list"
+      *ngFor="let slide of slides; let i = index"
+      [hidden]="i !== currentSlide"
+    >
+      <li *ngFor="let point of slide.points" >
+        <span class="check-icon">&#10004;</span>
+        <span>{{ point }}</span>
+      </li>
+    </ul>
+
+    <!-- Pagination / Indicateurs de carousel (3 points) -->
+    <!-- Pagination / Indicateurs de carousel (3 points) -->
+
+    <!-- <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+           <span class="dot"></span>
+         </div>
+  -->
+
+    <div class="carousel-dots">
+      <span
+        *ngFor="let slide of slides; let i = index"
+        class="dot"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+      >
+      </span>
+    </div>
+  </main>
+</section>
+
+<section class="poloi">
+  <main>
+    <div class="chou">
+      <h1 class="pati">reservation</h1>
+
+      <p class="pall">Book a Table</p>
+    </div>
+
+    <form class="boo">
+      <input type="text" name="name" placeholder="Your name" class="sok" required />
+      <input type="email" name="email" placeholder="Your Email" class="sok" required />
+      <input type="tel" name="phone" placeholder="Your phone" class="sok" required />
+      <input type="date" name="date" class="sok" required />
+      <input type="time" name="time" class="sok" required />
+      <input
+        id="book"
+        type="number"
+        name="people"
+        placeholder="# of people"
+        min="1"
+        class="sok"
+        required
+      />
+      <textarea name="message" placeholder="Message" rows="8" required></textarea>
+      <button class="sol">Book a Table</button>
+    </form>
+  </main>
+</section>
+
+<section class="xo">
+  <main>
+    <div class="ju">
+      <h1 class="ji">TESTIMONIALS</h1>
+
+      <p class="li">What they're saying about us</p>
+    </div>
+
+    <div   class="cadre">
+      <span class="icon start">&ldquo;</span>
+
+      <p class="testimonial-text">
+        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
+        minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+      </p>
+
+      <span id="about" class="icon end">&rdquo;</span>
+
+      <div class="test">
+        <img
+          src="/tailwindresponsive/img/chefs/chefs-2.jpg"
+          alt="Jena Karlis"
+          class="author-photo"
+        />
+        <h4 class="author-name">Jena Karlis</h4>
+        <p class="author-role">Store Owner</p>
+
+        <div class="testimonial-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+
+<section class="xok">
+  <main>
+    <div class="ju">
+      <h1 class="ji">GALLERY</h1>
+
+      <p class="li">Some photos from Our Restaurant</p>
+    </div>
+
+    <div class="imge">
+      <img src="/tailwindresponsive/img/gallery/gallery-1.jpg" alt="" />
+      <img src="/tailwindresponsive/img/gallery/gallery-2.jpg" alt="" />
+      <img src="/tailwindresponsive/img/gallery/gallery-3.jpg" alt="" />
+      <img id="gallery" src="/tailwindresponsive/img/gallery/gallery-4.jpg" alt="" />
+      <img src="/tailwindresponsive/img/gallery/gallery-5.jpg" alt="" />
+      <img src="/tailwindresponsive/img/gallery/gallery-6.jpg" alt="" />
+      <img src="/tailwindresponsive/img/gallery/gallery-7.jpg" alt="" />
+      <img src="/tailwindresponsive/img/gallery/gallery-8.jpg" alt="" />
+    </div>
+  </main>
+</section>
+
+<section class="sim">
+  <main>
+    <div class="ju">
+      <h1 class="ji">team</h1>
+
+      <p class="li">Necessitatibus eius consequatur</p>
+    </div>
+
+    <div class="imge">
+      <img src="/tailwindresponsive/img/chefs/chefs-1.jpg" alt="" />
+      <img src="/tailwindresponsive/img/chefs/chefs-2.jpg" alt="" />
+      <img src="/tailwindresponsive/img/chefs/chefs-3.jpg" alt="" />
+    </div>
+  </main>
+</section>
+
+<section class="nuk">
+  <main>
+    <div class="ju">
+      <h1 class="ji">contact</h1>
+
+      <p class="li">Contact Us</p>
+    </div>
+
+    <div class="info-item">
+      <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
+      <div class="info-text">
+        <h3>Location</h3>
+        <p>A108 Admin Street, New York,, NY 535022</p>
+      </div>
+    </div>
+
+    <div id="chefs" class="info-item">
+      <span class="info-icon"><i class="fas fa-clock"></i></span>
+      <div class="info-text">
+        <h3>Open Hours</h3>
+        <p>Monday-Saturday:<br />11:00 AM - 2300 PM</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <span class="info-icon"><i class="fas fa-phone-alt"></i></span>
+      <div class="info-text">
+        <h3>Call Us</h3>
+        <p>+1 5974 6282 26</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <span class="info-icon"><i class="fas fa-envelope"></i></span>
+      <div class="info-text">
+        <h3>Email Us</h3>
+        <p>info@restaurant.com</p>
+      </div>
+    </div>
+
+    <form class="boo">
+      <input type="text" name="name" placeholder="Your name" class="sokk" required />
+      <input type="email" name="email" placeholder="Your Email" class="sokk" required />
+      <input type="text" name="subject" placeholder="Subject" class="sokk" required />
+      <textarea name="message" placeholder="Message" rows="8" class="sokk"></textarea>
+      <button  class="sol">Send Message</button>
+    </form>
+  </main>
+</section>
+
+<footer class="footer">
+  <h2 class="footer-logo">Restaurantly</h2>
+  <p>A108 Adam Street<br />New York, NY 535022</p>
+
+  <div  class="poi">
+    <p><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+    <p><strong>Email:</strong> <span>info@example.com</span></p>
+  </div>
+  <div class="footer-social">
+    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a id="contact" href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+
+  <div  class="footer-links">
+    <h3>Useful Links</h3>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Terms of service</a></li>
+      <li><a href="#">Privacy policy</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-services">
+    <h3>Our Services</h3>
+    <ul>
+      <li><a href="#">Web Design</a></li>
+      <li><a href="#">Web Development</a></li>
+      <li><a href="#">Product Management</a></li>
+      <li><a href="#">Marketing</a></li>
+      <li><a href="#">Graphic Design</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-newsletter">
+    <h3>Our Newsletter</h3>
+    <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; Copyright <strong>Restaurantly</strong> All Rights Reserved</p>
+
+    <p>Developed by <a href="#">®raphael_dr</a></p>
+  </div>
+
+  <a href="#top" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+</footer>
