@@ -90,13 +90,13 @@
 
 <section class="kol">
   <main>
-    <div class="cho">
+    <div id="menu" class="cho">
       <h1 class="pato">Menu</h1>
 
       <p class="palu">Check Our Tasty Menu</p>
 
       <ul class="loli">
-        <li>
+        <li  >
           <a
             href="#"
             (click)="filterMenu('all', $event)"
@@ -140,7 +140,7 @@
       -->
     </div>
 
-    <div id="menu" class="menu-item" *ngFor="let item of filteredItems">
+    <div class="menu-item" *ngFor="let item of filteredItems">
       <img [src]="item.img" [alt]="item.name" class="menu-item-img" />
 
       <div class="menu-item-header">
