@@ -208,7 +208,7 @@ button:hover{
   .nav-menu ul {
     flex-direction: column; /* Alignement vertical pour mobile */
     align-items: center;
-    gap: 15px;
+    gap: 45px;
   }
 
   /* CLASSE ACTIVE (appliquée au clic en Angular) */
@@ -218,6 +218,8 @@ button:hover{
     transform: translateY(0); /* Glisse doucement vers le bas */
   }
 }
+
+
 
 
 
