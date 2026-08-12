@@ -16,7 +16,7 @@
   
     height: 100vh;
     width: 100%;
-    background-attachment: fixed;
+    background-attachment: scroll;   /* fixed ne donne pas avec ios sa rend tré flou ; couleur par defaut */
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('/tailwindresponsive/img/hero-bg.jpg');
